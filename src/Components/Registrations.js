@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Registrations.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Input from './Input';
 
 const Registrations = () => {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -14,17 +15,10 @@ const Registrations = () => {
                         <form method="POST">
                             <div class="row row-space">
                                 <div class="col-2">
-                                    <div class="input-group">
-                                        <label class="label">first name</label>
-                                        <input className="input--style-4" type="text" name="first_name" />
-                                    </div>
-
+                                    <Input name="fast_name" label="Fast Name" type="text" />
                                 </div>
                                 <div class="col-2">
-                                    <div class="input-group">
-                                        <label class="label">last name</label>
-                                        <input class="input--style-4" type="text" name="last_name" />
-                                    </div>
+                                    <Input name="last_name" label="Last Name" type="text" />
                                 </div>
                             </div>
                             <div class="row row-space">
@@ -37,9 +31,9 @@ const Registrations = () => {
                                         <div class="input-group-icon">
 
 
-                                            <input htmlFor="datepicker" class="input--style-4 js-datepicker" type="text" name="birthday" />
+                                            {/* <input htmlFor="datepicker" class="input--style-4 js-datepicker" type="text" name="birthday" /> */}
 
-                                            <DatePicker id='datepicker' selected={selectedDate}
+                                            <DatePicker selected={selectedDate}
                                                 onChange={date => setSelectedDate(date)}
 
                                             />
@@ -71,6 +65,9 @@ const Registrations = () => {
                                         <label class="label">Email</label>
                                         <input class="input--style-4" type="email" name="email" />
                                     </div>
+
+
+
                                 </div>
                                 <div class="col-2">
                                     <div class="input-group">
